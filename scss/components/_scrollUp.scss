@@ -1,0 +1,43 @@
+@use '../abstracts/' as *;
+
+/* ============== SCROLL UP ============== */
+.scroll{
+    &__up{
+        display: block;
+        position: fixed;
+        bottom: -100%;
+        right: rem(10);
+        width: rem(45);
+        height: rem(45);
+        z-index: 100;
+
+        &.show-scroll{
+            bottom: rem(20);
+        }
+    }
+
+    &up{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: $skin-light;
+        opacity: 0.9;
+        padding: rem(5);
+        border-radius: rem(4);
+        z-index: 50;
+        transition: 0.4s ease-in-out;
+        box-shadow: 0 0 rem(12) rgba($black-0,0.1);
+
+        &:hover{
+            background-color: $skin-dark;
+            opacity: 1;
+        }
+
+        & i{
+            font-size: rem(18);
+            color: #fff;
+        }
+    }
+}

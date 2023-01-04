@@ -1,0 +1,94 @@
+@use '../abstracts/' as *;
+@use '../base/' as *;
+
+.notification{
+    &__container{
+        width: 100%;
+        width: rem(280);
+        max-width: rem(350);
+        position: fixed;
+        bottom: rem(20);
+        left: rem(15);
+        z-index: 50;
+    }
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    min-height: rem(50);
+    margin-top: rem(10);
+    width: 100%;
+    padding: rem(5) rem(10);
+    transform: translateY(200%);
+    background: $white-1;
+    border-radius: rem(4);
+    box-shadow: 0 rem(6) rem(18) rgba($black-1, 0.1),
+                0 0 rem(2) rgba($black-1, 0.1);
+    animation: fade-in .6s ease-in-out forwards;
+
+    & .icon{
+        width: 10%;
+    }
+
+    & .content{
+        width: 80%;
+        
+        & h4{
+            font-weight: 500;
+            font-size: rem(14);
+            color: rgba($black-1, 0.9);
+        }
+
+        & p{
+            font-size: rem(13);
+            color: rgba($black-1, 0.5);
+        }
+    }
+
+    & .btn{
+        cursor: pointer;
+        width: rem(25);
+        height: rem(25);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &:hover{
+            background: rgba($black-1, 0.05);
+        }
+
+        &:active{
+            & i{
+                color: rgb(224, 25, 25);
+            }
+        }
+    }
+
+}
+
+.fa-circle-check{
+    color: rgb(70, 231, 6);
+    font-size: rem(18);
+}
+
+.fa-circle-xmark{
+    color: red;
+    font-size: rem(18);
+}
+
+.fa-xmark{
+    font-size: rem(18);
+}
+
+@keyframes fade-in {
+    0%{
+        transform: translateY(200%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

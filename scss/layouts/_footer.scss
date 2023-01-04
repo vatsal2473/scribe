@@ -1,0 +1,18 @@
+@use '../abstracts/' as *;
+
+footer{
+    height: 100%;
+    min-height: rem(55);
+    width: 100%;
+    background: $black-1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a{
+        color: rgba($white-0, 0.4);
+        font-size: rem(10);
+        letter-spacing: rem(1);
+        text-transform: uppercase;
+    }
+}

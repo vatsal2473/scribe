@@ -1,0 +1,218 @@
+@use '../abstracts/' as *;
+@use '../base/' as *;
+
+$gl-ms         : "screen and (max-width: 23.5em)"; // up to 360px
+$gl-xs         : "screen and (max-width: 35.5em)"; // up to 568px
+$gl-sm         : "screen and (max-width: 48em)";   // max 768px
+$gl-md         : "screen and (max-width: 64em)";   // max 1024px
+$gl-lg         : "screen and (max-width: 80em)";   // max 1280px
+
+.result{
+    &__container{
+        padding: rem(28) rem(10);
+        overflow-y:scroll;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        @include breakpoint(medium){
+            padding: rem(28);
+        }
+    }
+
+    & .ytvideo__container{
+        display: flex; 
+        justify-content:center; 
+        align-items: center;
+        position: relative;
+        padding-bottom: 56.25%;
+        margin: rem(10);
+        height: 0;
+
+        @include breakpoint(medium){
+            margin: rem(45);
+            padding-bottom: rem(413);
+        }
+
+        @include breakpoint(large){
+            margin: auto rem(200);
+            padding-bottom: rem(440);
+        }
+
+        & iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: rem(6);
+
+            @include breakpoint(large){
+                max-width: rem(650);
+                max-height: rem(440);
+            }
+        }
+    }
+}
+
+.slider__cont,
+.actions{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: rem(10);
+}
+
+// table style
+
+table {
+    border-collapse: collapse;
+    background: #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: auto;
+    width: 100%;
+    max-width: rem(1200);
+    -moz-box-shadow: 0 0 rem(25) rgba(26,26,26, 0.15);
+    -webkit-box-shadow: 0 0 rem(25) rgba(26,26,26, 0.15);
+    box-shadow: 0 0 rem(25) rgba(26,26,26, 0.15);
+
+    thead {
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+
+        th {
+            font-size: rem(14);
+            font-weight: 400;
+            color: #fff;
+            text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+            text-align: left;
+            padding: rem(10) rem(20);
+            background: $black-1;
+        
+            @include breakpoint(medium){
+                font-size: rem(16);
+                padding: rem(20);
+            }
+
+            &:first-child {
+                -moz-border-radius-topleft: 5px;
+                -webkit-border-top-left-radius: 5px;
+                border-top-left-radius: 5px;
+            }
+
+            &:last-child {
+                -moz-border-radius-topright: 5px;
+                -webkit-border-top-right-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+        }
+    }
+
+    .table-body tr{
+        td{
+            font-weight: 400;
+            color: $black-1;
+            font-size: rem(12);
+            padding: rem(10);
+        
+            @include breakpoint(medium){
+                font-size: rem(14);
+            }
+        }
+
+        &:nth-child(2n) {
+            background: rgba($skin-light,0.4);
+        }
+
+        &:last-child td:first-child {
+            -moz-border-radius-bottomleft: 5px;
+            -webkit-border-bottom-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        &:last-child td:last-child {
+            -moz-border-radius-bottomright: 5px;
+            -webkit-border-bottom-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        &:hover > tr td {
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+            opacity: 0.5;
+            /* uncomment for blur effect */
+            // color:transparent;
+            // text-shadow : 0px 0px 2px rgba(0,0,0,0.8);
+        }
+
+        &:hover > tr:hover td {
+            text-shadow: none;
+            color: #2d2d2d;
+            filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+            opacity: 1;
+        }
+    }
+  }
+  
+ 
+  .btn-slider{
+
+    input{
+        background: rgba($skin-dark,0.4);
+        appearance: none;
+        -webkit-appearance: none;
+        height: rem(10);
+        border: rem(0.5) solid rgba($black-1,0.1);
+        border-radius: rem(4);
+        
+       
+
+        &::-webkit-slider-thumb{
+            cursor: pointer;
+            appearance: none;
+            height: rem(20);
+            width: rem(20);
+            background: rgba($skin-dark,0.9);
+            border: rem(2) solid rgba($black-1,0.2);
+            border-radius: 50%;
+            box-shadow: 0 0 rem(8) rgba($black-1, 0.1);
+        }
+    }
+
+    .slider--value{
+        margin-left: rem(8);
+        text-align: center;
+        font-weight: 500;
+    }
+  }
+
+  audio{
+    height: 30px;
+    width: 250px;
+
+    @include breakpoint(medium){
+        height: 35px;
+        width: 300px;
+    }
+  }
+
+  .file--cont{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: rem(10);
+
+    & .audio--controls{
+        margin-left: rem(8);
+        font-size: rem(24);
+        cursor: pointer;
+
+        &:hover,
+        &:active{
+            color: rgba($black-1, 0.8);
+        }
+    }
+  }

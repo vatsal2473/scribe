@@ -1,0 +1,120 @@
+@use '../abstracts/' as *;
+@use '../base/' as *;
+
+.btn{
+    &--close{
+        position: absolute;
+        top: rem(18);
+        right: rem(10);
+        height: rem(18);
+        width: rem(18);
+        background: red;
+        border-radius: 50%;
+        border: rem(2) solid red;
+        transition: border 0.2s ease-in-out;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        &:hover{
+            border-color: rgba($white-0, 0.6);
+        }
+    }
+
+    &--remove{
+        height: rem(28);
+        width: rem(28);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        
+        &:hover{
+            background: rgba($black-1, 0.05);
+        }
+
+        &:active{
+            color: red;
+        }
+    }
+
+    &--add,
+    &--ans{
+        margin: rem(5) auto;
+        margin-bottom: rem(10);
+        padding: rem(5) rem(25);
+        background: $black-0;
+        color: greenyellow;
+        font-weight: 400;
+        letter-spacing: rem(2);
+        border-radius: rem(3);
+        cursor: pointer;
+        transition: color 0.25s ease-in-out, background 0.25s ease-in-out;
+
+        &:hover{
+            font-weight: 500;
+            background: greenyellow;
+            color: $black-1;
+            box-shadow: 0 rem(2) rem(12) rgba($black-1, 0.1);
+        }
+    }
+
+    &--ans{
+        margin: 0;
+        padding: rem(5) rem(15);
+        border: none;
+        outline: none;
+        color: $skin-dark;
+        font-weight: 500;
+        font-size: rem(12);
+        box-shadow: 0 rem(2) rem(8) rgba($black-1, 0.2);
+
+        &:hover{
+            background: $skin-dark;
+            color: $black-1;
+        }
+    }
+
+    &--transcribe,
+    &--transcribe1{
+        font-size: rem(14);
+        padding: rem(5);
+        background: $skin-dark;
+        color: $black-1;
+        height: rem(30);
+        width: rem(30);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+
+        &:hover{
+            background: $black-1;
+            color: $skin-dark;
+        }
+
+        & span{
+            display: none;
+        }
+
+        @include breakpoint(medium){
+            font-size: rem(14);
+            padding: rem(5) rem(8);
+            border-radius: rem(4);
+            width: fit-content;
+
+            & span{
+                display: inline;
+                margin-left: rem(8);
+            }
+        }
+    }
+
+    &-upque * input[type="file"]{
+        background: red;
+    }
+
+}

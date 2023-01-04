@@ -1,0 +1,19 @@
+@use '../abstracts/' as *;
+
+/* ========== Scrollbar resets ==========  */
+
+::-webkit-scrollbar{
+    width: rem(8);
+    background: rgba($black-1, 0.05);
+    /* border-radius: 0.5rem; */
+}
+
+::-webkit-scrollbar-thumb{
+    // height: rem(1);
+    background-color: $skin-light;
+    border-radius: rem(5);
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: $skin-dark;
+}

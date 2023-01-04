@@ -1,0 +1,41 @@
+@use '../abstracts/' as *;
+
+// h1{
+//     font-size: $heading;
+//     font-weight: $heading-w;
+//     line-height: rem(85);
+
+//     @include breakpoint-down(large)
+//     {
+//         font-size: $heading-size-l;
+//         line-height: rem(65);
+//     }
+//     @include breakpoint-down(medium)
+//     {
+//         font-size: $heading-size-m;
+//         line-height: rem(45);
+//     }
+//     @include breakpoint-down(small)
+//     {
+//         font-size: $heading-size-s;
+//     }
+// }
+
+// h2{
+//     font-size: $title;
+//     font-weight: $title-w;
+//     line-height: rem(65);
+// }
+
+// h3{
+//     font-size: $subtitle;
+//     font-weight: $subtitle-w;
+//     line-height: rem(55);
+// }
+
+// p{
+//     font-size: $para;
+//     font-weight: $para-w;
+//     line-height: rem(24);
+//     word-spacing: 1.2;
+// }

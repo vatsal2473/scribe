@@ -1,0 +1,163 @@
+@use '../abstracts/' as *;
+@use '../base/' as *;
+
+.qna{
+    width: 100%;
+    height: 100%;
+    padding: rem(12);
+    margin-bottom: rem(15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__section{
+        width: 100%;
+        max-width: rem(1250);
+        height: 100%;
+        padding: rem(12);
+        background: rgba($skin-dark, 0.08);
+        backdrop-filter: blur(rem(3));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: rem(10);
+        border: rem(1) dashed rgba($skin-dark, 1);
+        border-radius: rem(12);
+
+        @include breakpoint(medium){
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .pdf--generation{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: rem(5);
+            gap: rem(5);
+
+            h4{
+                font-size: rem(18);
+                padding: rem(5) 0 rem(8);
+
+                @include breakpoint(medium){
+                    padding: 0;
+                }
+            }
+
+            .generate__pdf{
+                width: 100%;
+                max-width: rem(115);
+                height: max-content;
+                padding: rem(9) rem(12);
+                border: none;
+                outline: none;
+                border-radius: rem(3);
+                font-size: rem(14);
+                color: $skin-light;
+                background: $black-1;
+                opacity: 1;
+                cursor: pointer;
+                transition: all 0.25s ease-in-out;
+                box-shadow: 0 rem(2) rem(8) rgba($black-1,0.2), 0 rem(-2) rem(12) rgba($black-1,0.4) inset;
+
+                &:hover{
+                    background: rgb(210, 27, 48);
+                    color: $white-1;
+                }
+
+                & span{
+                    margin-left: rem(10);
+                }
+            }
+        }
+    }
+
+    &__container{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+        max-width: rem(1224);
+        height: rem(45);
+        border: rem(1.05) solid rgba($skin-dark, 0.815);
+        padding: rem(10);
+        border-radius: rem(3.75);
+        background: rgba($skin-dark,0.18);
+        backdrop-filter: blur(rem(10));
+        overflow: hidden;
+        transition: height 0.35s ease-in-out;
+        cursor: pointer;
+
+        &.active{
+            height: max-content;
+        }
+
+        &.mod--2{
+            flex-direction: row;
+            gap: rem(10);
+            height: rem(55);
+            padding: rem(8);
+            max-width: rem(475);
+            align-self: flex-start;
+        }
+    }
+
+    &--question{
+        font-weight: 600;
+        font-size: rem(16);
+        z-index: 2;
+        color: rgb(100, 5, 5);
+        width: 100%;
+        // margin-bottom: rem(5);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span{
+            i{
+                transition: transform 0.25s ease-in-out;
+                
+
+                &.active{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    &--answer{
+        width: 100%;
+        font-size: rem(14);
+        opacity: 0;
+        color: rgb(70, 0, 0);
+        transform: translateY(-10%);
+        transition: transform 0.35s ease-in-out, opacity 0.15s ease-in-out;
+        z-index: 1;
+
+        &.active{
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .seprator{
+            width: rem(1200);
+            max-width: 100%;
+            margin: rem(8) 0;
+            height: rem(0.6);
+            background: rgba(100, 5, 5, 0.2);
+            transition: all 0.25s ease-in-out;
+        }
+    }
+
+    &--getans{
+        width: 100%;
+        height: 100%;
+        padding: rem(10);
+        border-radius: rem(4);
+        border: rem(1) solid $skin-dark;
+        outline: none;
+    }
+}

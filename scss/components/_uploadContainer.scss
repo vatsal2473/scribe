@@ -1,0 +1,130 @@
+@use '../abstracts/' as *;
+@use '../base/' as *;
+
+$bg : rgba($skin-dark, 1);
+
+.video{
+    &__box{
+        background: $white-0;
+        width: 100%;
+        max-width: rem(1250);
+        min-height: rem(300);
+        padding: rem(15) rem(25);
+        margin-top: rem(45);
+        border-radius: rem(14);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        gap: rem(15);
+        box-shadow: 0 rem(6) rem(24) rgba(149, 157, 165, 0.2);
+
+        @include breakpoint(medium){
+            flex-direction: row;
+            padding: rem(45) rem(25);
+        }
+
+        @include breakpoint(large){
+            min-height: rem(350);
+            padding: rem(45);
+        }
+    }
+
+    &__local,
+    &__online{
+        width: 100%;
+        max-width: rem(450);
+        height: rem(130);
+        max-height: rem(250);
+        background: $white-0;
+        padding: rem(8);
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: rem(8);
+
+        @include breakpoint(medium){
+            min-height: rem(200);
+        }
+    }
+
+    &__local,
+    &__online{
+        border: rem(1) dashed #ccc;
+        display: grid;
+        grid-template-columns: rem(50) 1fr;
+        place-items: center;
+
+        @include breakpoint(medium){
+            grid-template-columns: rem(100) 1fr;
+        }
+
+        & .icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            font-size: rem(32);
+            padding: 0 rem(10);
+            border-right: rem(1) solid rgba(204, 204, 204, 0.397);
+        }
+
+        & .content{
+            display: grid;
+            grid-template-columns: 1fr;
+            place-items: center;
+            padding: 0 rem(8);
+            gap: rem(10);
+            text-align: center;
+
+            &--text{
+                font-size: rem(12);
+
+                @include breakpoint(medium){
+                    font-size: rem(15);
+                }
+            }
+
+            &--action{
+                background: $black-1;
+                color: $skin-light;
+                padding: rem(8) rem(32);
+                text-align: center;
+                font-weight: 500;
+                border-radius: rem(3);
+                text-transform: uppercase;
+                letter-spacing: rem(2);
+                line-height: rem(19);
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+            }
+
+            &--action:hover{
+                color: $black-1;
+                background: $skin-light;
+                box-shadow: 0 rem(2) rem(18) rgba(204, 204, 204, 0.765);
+            }
+        }
+    }
+
+    &__online{
+        border: none;
+    }
+
+    &__local{
+        & .content{
+            &--action{
+                position: relative;
+
+                & input{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+

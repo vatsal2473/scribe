@@ -1,0 +1,22 @@
+@use '../components/' as *;
+@use '../abstracts/' as *; 
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(10);
+    background: $white-0;
+    box-shadow: 0 0 rem(10) rgba(0, 0, 0, 0.85);
+    border-bottom: rem(1) solid rgb(215, 215, 215);
+
+    & .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include breakpoint(large){
+        padding: rem(10) rem(170);
+    }
+}
