@@ -1410,7 +1410,7 @@ function handleQnAgenerate(response){
             qnaCont.classList.add('qna__container');
             qnaCont.classList.add('active');
             qnaCont.innerHTML = `<div class="qna--question">
-                                ● ${response[i].original_question}
+                                ● ${response[i].question_asked}
                                 <span><i class="fa-solid fa-chevron-down active"></i></span>
                             </div>
                             
